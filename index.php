@@ -27,7 +27,23 @@ foreach ($events as $event) {
     error_log('Non text message has come');
     continue;
   }
+
+  if (strcmp($event->getText(), "かわいいね") == 0){
+    $bot->replyText($event->getReplyToken(), "イエーーーーーーイ！");
+  }
+  else if (strcmp($event->getText(), "こんにちは") == 0){
+    $bot->replyText($event->getReplyToken(), "コンニチワ");
+  }
+  else if (strcmp($event->getText(), "おはよう") == 0){
+    $bot->replyText($event->getReplyToken(), "オハヨー");
+  }
+  else if (strcmp($event->getText(), "ありがとう") == 0){
+    $bot->replyText($event->getReplyToken(), "アリガット");
+  }
+  else{
   $bot->replyText($event->getReplyToken(), $event->getText());
+}
+
 }
 
 ?>
