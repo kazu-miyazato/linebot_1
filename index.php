@@ -55,7 +55,7 @@ foreach ($events as $event) {
 
   //print "UserId:" . $event->getUserId();
   //fputs(STDOUT, "hello world to stdout\n");
-  error_log("log output test\n");
+  error_log("UserId" . $event->getUserId() . "\n");
   //file_put_contents("php://stderr", "hello, this is a test!\n");
 }
 
