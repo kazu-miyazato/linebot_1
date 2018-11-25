@@ -53,7 +53,7 @@ foreach ($events as $event) {
   else{
   $bot->replyText($event->getReplyToken(), $event->getText());
 
-  echo $event->getUserId();
+  print "UserId:" . $event->getUserId();
 }
 
 }
