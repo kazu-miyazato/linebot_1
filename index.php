@@ -21,7 +21,8 @@ for ($i = 0; $i < 10; $i++){
   //ログ出力
   error_log("finish app\n");
 
-  sleep(60);
+  //5秒待つ
+  //sleep(5);
 }
 
 /*
