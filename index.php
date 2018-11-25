@@ -53,7 +53,8 @@ foreach ($events as $event) {
   else{
   $bot->replyText($event->getReplyToken(), $event->getText());
 
-  print "UserId:" . $event->getUserId();
+  //print "UserId:" . $event->getUserId();
+  fputs(STDOUT, "hello world to stdout\n");
 }
 
 }
