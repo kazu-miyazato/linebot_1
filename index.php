@@ -11,12 +11,13 @@ $userId = 'Uf5d4de7c0f268a6b4bbd936c69c32461';
 //Pushメッセージ作成
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
 
-//Pushメッセージ送信
-$response = $bot->pushMessage($userId, $textMessageBuilder);
-
+//10回繰り返し
 for ($i = 0; $i < 10; $i++){
+  //Pushメッセージ送信
+  $response = $bot->pushMessage($userId, $textMessageBuilder);
+
   //ログ出力？
-  echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+  //echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
   //ログ出力
   error_log("finish app\n");
