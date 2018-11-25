@@ -54,7 +54,9 @@ foreach ($events as $event) {
   $bot->replyText($event->getReplyToken(), $event->getText());
 
   //print "UserId:" . $event->getUserId();
-  fputs(STDOUT, "hello world to stdout\n");
+  //fputs(STDOUT, "hello world to stdout\n");
+  error_log("log output test\n");
+  //file_put_contents("php://stderr", "hello, this is a test!\n");
 }
 
 }
