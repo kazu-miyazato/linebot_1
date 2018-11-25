@@ -14,11 +14,15 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello
 //Pushメッセージ送信
 $response = $bot->pushMessage($userId, $textMessageBuilder);
 
-//ログ出力？
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+for ($i = 0; $i < 10; $i++){
+  //ログ出力？
+  echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
-//ログ出力
-error_log("finish app\n");
+  //ログ出力
+  error_log("finish app\n");
+
+  sleep(60);
+}
 
 /*
 $signature = $_SERVER["HTTP_" . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
