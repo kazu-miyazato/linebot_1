@@ -5,7 +5,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS_TOKEN'));
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET')]);
 
+/*
 //userid定義
+//のはら
 $userId = 'Uf5d4de7c0f268a6b4bbd936c69c32461';
 
 //Pushメッセージ作成
@@ -25,8 +27,9 @@ for ($i = 0; $i < 10; $i++){
   //5秒待つ
   //sleep(5);
 }
+*/
 
-/*
+
 $signature = $_SERVER["HTTP_" . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
   $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
@@ -72,6 +75,6 @@ foreach ($events as $event) {
 }
 
 }
-*/
+
 
 ?>
