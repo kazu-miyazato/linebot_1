@@ -9,7 +9,7 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
 
 //Pushメッセージ送信
-$response = $bot->pushMassage('Uf5d4de7c0f268a6b4bbd936c69c32461', $textMessageBuilder);
+$response = $bot->pushMessage('Uf5d4de7c0f268a6b4bbd936c69c32461', $textMessageBuilder);
 
 //ログ出力？
 //echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
