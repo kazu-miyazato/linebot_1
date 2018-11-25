@@ -5,14 +5,17 @@ require_once __DIR__ . '/vendor/autoload.php';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS_TOKEN'));
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET')]);
 
+//userid定義
+$userId = 'Uf5d4de7c0f268a6b4bbd936c69c32461';
+
 //Pushメッセージ作成
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
 
 //Pushメッセージ送信
-$response = $bot->pushMessage('Uf5d4de7c0f268a6b4bbd936c69c32461', $textMessageBuilder);
+$response = $bot->pushMessage($userId, $textMessageBuilder);
 
 //ログ出力？
-//echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 /*
 $signature = $_SERVER["HTTP_" . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
