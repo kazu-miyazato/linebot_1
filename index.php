@@ -5,6 +5,16 @@ require_once __DIR__ . '/vendor/autoload.php';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS_TOKEN'));
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET')]);
 
+//Pushメッセージ作成
+//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+
+//Pushメッセージ送信
+//$response = $bot->pushMassage('<to>', $textMessageBuilder);
+
+//ログ出力？
+//echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
+
 $signature = $_SERVER["HTTP_" . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
   $events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
@@ -42,8 +52,11 @@ foreach ($events as $event) {
   }
   else{
   $bot->replyText($event->getReplyToken(), $event->getText());
+
+  echo $event->getUserId();
 }
 
 }
+
 
 ?>
