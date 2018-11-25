@@ -17,6 +17,9 @@ $response = $bot->pushMessage($userId, $textMessageBuilder);
 //ログ出力？
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
+//ログ出力
+error_log("finish app\n");
+
 /*
 $signature = $_SERVER["HTTP_" . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
